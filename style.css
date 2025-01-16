@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;  /* Background warna ungu pastel */
+}
+
+.calculator {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 40px rgba(88, 6, 143, 0.6); /* Glow pada kotak kalkulator */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Glow pada Layar Kalkulator */
+.display {
+    width: 100%;
+    height: 60px;
+    font-size: 36px;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid rgb(88, 6, 143);
+    border-radius: 15px;
+    background-color: #f8f1fc;
+    color: rgb(88, 6, 143);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(88, 6, 143, 0.7); /* Glow */
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Layout Tombol */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Tombol */
+.btn {
+    background-color: #d1c4e9;
+    border: none;
+    font-size: 24px;
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Glow saat Tombol di Hover */
+.btn:hover {
+    background-color: rgb(88, 6, 143);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 0 20px rgba(88, 6, 143, 0.8); /* Glow */
+}
+
+/* Glow saat Tombol ditekan */
+.btn:active {
+    background-color: rgb(88, 6, 143);
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 0 10px rgba(88, 6, 143, 0.7); /* Glow */
+}
+
+/* Glow pada Tombol Operator dan Tombol Clear */
+.btn.operator:hover,
+.btn.clear:hover,
+.btn.equal:hover {
+    background-color: rgb(88, 6, 143);
+    box-shadow: 0 0 20px rgba(88, 6, 143, 0.8); /* Glow */
+}
+
+.btn:focus {
+    outline: none;
+}
+
+/* Tombol Operator */
+.btn.operator {
+    background-color: #ab47bc;
+    color: white;
+}
+
+/* Tombol Clear */
+.btn.clear {
+    background-color: #ab47bc;
+    color: white;
+}
+
+/* Tombol Equal */
+.btn.equal {
+    background-color: #ab47bc;
+    color: white;
+}
+
+button {
+    transition: all 0.2s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.256);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+.btn:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+}
